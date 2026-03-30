@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Katana Gin Classic",
+    "price": "$22.000",
+    "image": "/src/assets/images/Bottle.webp",
+    "detail": "750ml",
+    "category": "Gin",
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "title": "Kit Degustación",
+    "price": "$35.000",
+    "image": "/src/assets/images/Kit_Botella_Copa.webp",
+    "detail": "",
+    "category": "Kits",
+    "isAvailable": true
+  },
+  {
+    "id": 3,
+    "title": "Abanico Espadas",
+    "price": "$12.000",
+    "image": "/src/assets/images/Abanico_Espadas_Negro.webp",
+    "detail": "Negro",
+    "category": "Merchandising",
+    "isAvailable": true
+  },
+  {
+    "id": 4,
+    "title": "Abanico Espadas",
+    "price": "$12.000",
+    "image": "/src/assets/images/Abanico_Espadas_Blanco.webp",
+    "detail": "Blanco",
+    "category": "Merchandising",
+    "isAvailable": true
+  },
+  {
+    "id": 5,
+    "title": "Abanico Trama",
+    "price": "$12.000",
+    "image": "/src/assets/images/Abanico_Trama_Blanco.webp",
+    "detail": "Blanco",
+    "category": "Merchandising",
+    "isAvailable": true
+  },
+  {
+    "id": 6,
+    "title": "Copa",
+    "price": "$12.000",
+    "image": "/src/assets/images/Copa.webp",
+    "detail": "Cristal",
+    "category": "Merchandising",
+    "isAvailable": true
+  },
+  {
+    "id": 7,
+    "title": "Chupito",
+    "price": "$12.000",
+    "image": "/src/assets/images/Chupito.webp",
+    "detail": "Cristal",
+    "category": "Merchandising",
+    "isAvailable": true
+  }
+]
