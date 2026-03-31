@@ -5,6 +5,7 @@ import type { CartItem } from './CartContext';
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isRecentlyAdded, setIsRecentlyAdded] = useState(false);
 
   const addToCart = (product: Omit<CartItem, 'quantity'>) => {
     setCartItems((prev) => {
@@ -18,6 +19,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       // Si no existe, lo agrega con cantidad 1
       return [...prev, { ...product, quantity: 1 }];
     });
+
+    // Feedback visual global
+    setIsRecentlyAdded(true);
+    setTimeout(() => setIsRecentlyAdded(false), 2000);
   };
 
   const removeFromCart = (id: number) => {
@@ -43,7 +48,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, totalItems }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, totalItems, isRecentlyAdded }}>
       {children}
     </CartContext.Provider>
   );

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Katana Gin Classic",
+    "title": "Katana Gin Pandora",
     "price": "$22.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913873/Bottle_wy0ksy.webp",
     "detail": "750ml",
@@ -10,16 +10,16 @@
   },
   {
     "id": 2,
-    "title": "Kit Degustación",
+    "title": "Katana Gin + Copa",
     "price": "$35.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913875/Kit_Botella_Copa_mt89jc.webp",
-    "detail": "",
+    "detail": "Kit 1",
     "category": "Kits",
     "isAvailable": true
   },
   {
     "id": 3,
-    "title": "Abanico Espadas",
+    "title": "Abanico Katanas",
     "price": "$12.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913874/Abanico_Espadas_Negro_se2jwv.webp",
     "detail": "Negro",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "title": "Abanico Espadas",
+    "title": "Abanico Katanas",
     "price": "$12.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913873/Abanico_Espadas_Blanco_pivgxn.webp",
     "detail": "Blanco",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "title": "Abanico Trama",
+    "title": "Abanico Original",
     "price": "$12.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913876/Abanico_Trama_Blanco_lr5gsu.webp",
     "detail": "Blanco",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "title": "Chupito",
+    "title": "Vaso Shot",
     "price": "$12.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913874/Chupito_erikxb.webp",
     "detail": "Cristal",

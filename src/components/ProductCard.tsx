@@ -53,8 +53,7 @@ export default function ProductCard({ id, title, price, image, detail, isAvailab
         {isAvailable ? (
           <Button 
             variant={isAdded ? "success" : "primary"} 
-            icon={isAdded ? "mdi:check" : "roentgen:supermarket-cart"}
-            hoverIcon={isAdded ? "mdi:check" : "mdi:plus"}
+            icon={isAdded ? "mdi:check" : "mdi:plus"}
             size='md'
             onClick={handleAddToCart}
           />

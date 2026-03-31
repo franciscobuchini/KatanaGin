@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import Logo from '../assets/svg/katana-gin-logo.svg';
 import Button from './Button';
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className="w-full relative flex flex-col md:flex-row items-center justify-center p-6 md:p-10 mt-auto">
       {/* Container to center the logo regardless of the absolute elements */}
@@ -12,7 +14,7 @@ function Footer() {
         <Button 
           variant="secondary" 
           icon="ri:mail-fill" 
-          onClick={() => window.location.href = 'mailto:info@katana.tech'}
+          onClick={() => navigate('/contacto')}
         />
         <Button 
           variant="secondary" 

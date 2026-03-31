@@ -10,7 +10,7 @@ function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const cartRef = useRef<HTMLDivElement>(null);
-  const { cartItems, increaseQuantity, decreaseQuantity, totalItems } = useCart();
+  const { cartItems, increaseQuantity, decreaseQuantity, totalItems, isRecentlyAdded } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
   const isCheckout = location.pathname === '/checkout';
@@ -61,7 +61,6 @@ function Header() {
           <Link to="/"><Button variant="ghost" size="md">Inicio</Button></Link>
           <Link to="/tienda"><Button variant="ghost" size="md">Tienda</Button></Link>
           <Link to="/contacto"><Button variant="ghost" size="md">Contacto</Button></Link>
-          <Link to="/nosotros"><Button variant="ghost" size="md">Nosotros</Button></Link>
         </nav>
 
         {/* Right Side */}
@@ -90,9 +89,9 @@ function Header() {
             <>
               <div className="relative">
                 <Button 
-                    variant={scrolled ? "primary" : "secondary"} 
+                    variant={isRecentlyAdded ? "success" : (scrolled ? "primary" : "secondary")} 
                     size="md" 
-                    icon="roentgen:supermarket-cart" 
+                    icon={isRecentlyAdded ? "mdi:check" : "roentgen:supermarket-cart"} 
                     className="transition-all duration-500"
                     onClick={() => {
                       setIsCartOpen(!isCartOpen);
@@ -123,7 +122,6 @@ function Header() {
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}><Button className="w-full justify-start" variant="ghost" size="md">Inicio</Button></Link>
           <Link to="/tienda" onClick={() => setIsMobileMenuOpen(false)}><Button className="w-full justify-start" variant="ghost" size="md">Tienda</Button></Link>
           <Link to="/contacto" onClick={() => setIsMobileMenuOpen(false)}><Button className="w-full justify-start" variant="ghost" size="md">Contacto</Button></Link>
-          <Link to="/nosotros" onClick={() => setIsMobileMenuOpen(false)}><Button className="w-full justify-start" variant="ghost" size="md">Nosotros</Button></Link>
         </nav>
       </div>
     </header>

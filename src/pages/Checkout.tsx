@@ -1,60 +1,29 @@
-import { useState } from 'react';
 import PageContainer from '../components/PageContainer';
 import PageTitle from '../components/PageTitle';
 import { useCart } from '../functions/useCart';
 import Card from '../components/Card';
 import Input from '../components/Input';
 import Button from '../components/Button';
-import couponsData from '../data/coupons.json';
+import { useCoupons } from '../functions/useCoupons';
 
 function Checkout() {
   const { cartItems } = useCart();
-  const [coupon, setCoupon] = useState('');
-  const [couponStatus, setCouponStatus] = useState<'idle' | 'valid' | 'invalid'>('idle');
-  const [discountMessage, setDiscountMessage] = useState('');
-  const [appliedCoupon, setAppliedCoupon] = useState<{ discount: number, type: string } | null>(null);
 
   const subtotal = cartItems.reduce((sum, item) => {
     const numericPrice = Number(item.price.replace(/[^0-9]/g, ''));
     return sum + numericPrice * item.quantity;
   }, 0);
 
-  let discountAmount = 0;
-  if (appliedCoupon) {
-    if (appliedCoupon.type === 'percentage') {
-      discountAmount = subtotal * (appliedCoupon.discount / 100);
-    } else if (appliedCoupon.type === 'fixed') {
-      discountAmount = appliedCoupon.discount;
-    }
-  }
-  
-  const total = Math.max(0, subtotal - discountAmount);
-
-  const handleApplyCoupon = () => {
-    const foundCoupon = couponsData.find(c => c.code === coupon.trim().toUpperCase());
-    if (foundCoupon) {
-      setCouponStatus('valid');
-      setAppliedCoupon({ discount: foundCoupon.discount, type: foundCoupon.type });
-      if (foundCoupon.type === 'percentage') {
-        setDiscountMessage(`¡Cupón del ${foundCoupon.discount}% aplicado!`);
-      } else if (foundCoupon.type === 'fixed') {
-        setDiscountMessage(`¡Descuento de $${foundCoupon.discount} aplicado!`);
-      } else {
-        setDiscountMessage('¡Cupón aplicado exitosamente!');
-      }
-    } else {
-      setCouponStatus('invalid');
-      setDiscountMessage('Cupón inválido o expirado.');
-    }
-  };
-
-  const handleCouponChange = (val: string) => {
-    setCoupon(val);
-    if (couponStatus !== 'idle') {
-      setCouponStatus('idle');
-      setAppliedCoupon(null);
-    }
-  };
+  const {
+    couponCode,
+    couponStatus,
+    appliedCoupon,
+    discountMessage,
+    discountAmount,
+    total,
+    applyCoupon,
+    handleCouponChange
+  } = useCoupons(subtotal);
   
   return (
     <PageContainer gap={16}>
@@ -106,14 +75,14 @@ function Checkout() {
                   <Input 
                     placeholder="Cupón de descuento" 
                     className={`flex-1 min-w-0 ${couponStatus === 'invalid' ? 'border-red-400 focus:border-red-500' : couponStatus === 'valid' ? 'border-success/50 focus:border-success' : ''}`}
-                    value={coupon}
+                    value={couponCode}
                     onChange={(e) => handleCouponChange(e.target.value)}
                   />
                   <Button 
-                    variant={coupon.trim() ? "primary" : "secondary"} 
+                    variant={couponCode.trim() ? "primary" : "secondary"} 
                     size="lg" 
-                    disabled={!coupon.trim() || couponStatus === 'valid'}
-                    onClick={handleApplyCoupon}
+                    disabled={!couponCode.trim() || couponStatus === 'valid'}
+                    onClick={applyCoupon}
                     icon={couponStatus === 'valid' ? "mdi:check-bold" : "mdi:arrow-right"}
                   />
                 </div>

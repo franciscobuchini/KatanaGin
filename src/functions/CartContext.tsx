@@ -16,6 +16,7 @@ export interface CartContextType {
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   totalItems: number;
+  isRecentlyAdded: boolean;
 }
 
 export const CartContext = createContext<CartContextType | null>(null);
