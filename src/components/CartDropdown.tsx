@@ -15,15 +15,16 @@ interface CartDropdownProps {
   cartItems: CartItem[];
   onIncrease: (id: number) => void;
   onDecrease: (id: number) => void;
+  onClose?: () => void;
 }
 
-export default function CartDropdown({ isVisible, cartItems, onIncrease, onDecrease }: CartDropdownProps) {
+export default function CartDropdown({ isVisible, cartItems, onIncrease, onDecrease, onClose }: CartDropdownProps) {
   const navigate = useNavigate();
 
   if (!isVisible) return null;
 
   return (
-    <div className="absolute top-full right-0 mt-4 w-96 bg-white/95 backdrop-blur-2xl border border-border shadow-2xl rounded-3xl overflow-hidden z-[100] animate-in fade-in slide-in-from-top-4 duration-300">
+    <div className="absolute top-full right-[-1rem] md:right-0 mt-4 w-[calc(100vw-2rem)] md:w-96 bg-white/95 backdrop-blur-2xl border border-border shadow-2xl rounded-3xl overflow-hidden z-[100] animate-in fade-in slide-in-from-top-4 duration-300">
       
       {/* Header */}
       <div className="p-6 border-b border-border/50 flex items-center justify-between">
@@ -82,7 +83,10 @@ export default function CartDropdown({ isVisible, cartItems, onIncrease, onDecre
         <Button 
           variant="primary" 
           className="w-full"
-          onClick={() => navigate('/checkout')}
+          onClick={() => {
+            if (onClose) onClose();
+            navigate('/checkout');
+          }}
         >
           Finalizar Compra
         </Button>

@@ -1,0 +1,17 @@
+[
+  {
+    "code": "KATANA10",
+    "discount": 10,
+    "type": "percentage"
+  },
+  {
+    "code": "VERANO20",
+    "discount": 20,
+    "type": "percentage"
+  },
+  {
+    "code": "FIJO1000",
+    "discount": 1000,
+    "type": "fixed"
+  }
+]

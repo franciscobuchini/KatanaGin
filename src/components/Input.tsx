@@ -6,7 +6,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = ({ className = "", isTextarea = false, ...props }: InputProps) => {
-  const baseStyles = "w-full bg-white border border-border/50 rounded-2xl px-6 outline-none focus:border-primary/30 transition-all duration-300 font-normal text-muted placeholder:text-muted/60 focus:bg-secondary";
+  const baseStyles = "w-full bg-white border border-border/50 rounded-2xl px-6 outline-none focus:border-primary/30 transition-all duration-300 font-normal text-muted placeholder:text-muted/60 focus:bg-secondary text-lg";
   
   if (isTextarea) {
     return (

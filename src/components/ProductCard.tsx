@@ -40,7 +40,7 @@ export default function ProductCard({ id, title, price, image, detail, isAvailab
         
         {/* Información Básica */}
         <div className='flex flex-col overflow-hidden'>
-          <h3 className='flex items-baseline gap-2 text-sm md:text-md font-medium text-primary tracking-tight leading-normal'>
+          <h3 className='flex items-baseline gap-2 text-sm md:text-base font-medium text-primary tracking-tight leading-normal'>
             <span className="truncate">{title}</span>
             {detail && <span className='font-normal text-gray-400 text-xs shrink-0'>{detail}</span>}
           </h3>

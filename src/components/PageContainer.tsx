@@ -7,8 +7,8 @@ interface PageContainerProps {
 }
 
 export default function PageContainer({ children, className = "", gap = 8 }: PageContainerProps) {
-  // Base classes including pt-40 to compensate for the fixed header
-  const baseClasses = `pt-40 pb-20 px-4 flex flex-col items-center justify-center w-full min-h-full max-w-7xl mx-auto`;
+  // Base classes including pt-32 to compensate for the fixed header on mobile and pt-40 on desktop
+  const baseClasses = `pt-32 md:pt-40 pb-16 md:pb-20 px-4 flex flex-col items-center justify-center w-full min-h-full max-w-7xl mx-auto`;
   
   // Responsive gap
   const gapClass = {
@@ -19,7 +19,7 @@ export default function PageContainer({ children, className = "", gap = 8 }: Pag
   }[gap];
 
   return (
-    <main className={`${baseClasses} ${gapClass} md:px-24 lg:px-48 ${className}`}>
+    <main className={`${baseClasses} ${gapClass} md:px-8 xl:px-32 ${className}`}>
       {children}
     </main>
   );

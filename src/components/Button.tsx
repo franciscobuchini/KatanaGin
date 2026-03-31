@@ -46,7 +46,7 @@ function Button({
     xs: "h-7 text-[10px] rounded-md",
     sm: "h-9 text-xs rounded-md",
     md: "h-11 text-sm rounded-lg",
-    lg: "h-14 text-base rounded-xl",
+    lg: "h-14 text-lg rounded-xl",
   };
 
   // Content-based sizing (ensures square shape for icons and proper padding for text)
