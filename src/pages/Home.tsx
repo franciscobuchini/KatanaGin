@@ -29,7 +29,7 @@ function Home() {
       <div className='text-center flex flex-col gap-6 items-center'>
         <PageTitle size="lg" uppercase>
           PURA<br/>
-          PRECISIÓN
+          PRECISION
         </PageTitle>        
       </div>
       
