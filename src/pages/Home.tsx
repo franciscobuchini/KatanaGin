@@ -21,7 +21,11 @@ function Home() {
 
   return (
     <PageContainer gap={16}>
-      <SEO structuredData={structuredData} />
+      <SEO 
+        title="Gin Artesanal Santa Fe | Pura Precisión"
+        description="Katana Gin: Destilería de gin de autor en Santa Fe. Pura precisión en cada botella de nuestro Gin artesanal. Envío a domicilio en Santa Fe Capital y alrededores."
+        structuredData={structuredData} 
+      />
       <div className='text-center flex flex-col gap-6 items-center'>
         <PageTitle size="lg" uppercase>
           PURA<br/>

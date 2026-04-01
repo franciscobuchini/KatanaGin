@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import KatanaLogo from '../assets/svg/katana-logo.svg';
 import Button from './Button';
 import CartDropdown from './CartDropdown';
 import { Link, useLocation, useNavigate } from 'react-router-dom';

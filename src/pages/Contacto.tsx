@@ -16,8 +16,8 @@ function Contacto() {
   return (
     <PageContainer gap={8}>
       <SEO 
-        title="Contacto" 
-        description="Ponte en contacto con Katana Gin. Consultas sobre ventas mayoristas, eventos o información general." 
+        title="Contacto | Ventas Mayoristas y Distribución" 
+        description="¿Buscás gin artesanal para tu evento o negocio en Santa Fe? Contactanos para ventas mayoristas, regalos empresariales y distribución regional de Katana Gin." 
         url="https://katanagin.com/contacto"
       />
       <PageTitle>CONTACTO</PageTitle>

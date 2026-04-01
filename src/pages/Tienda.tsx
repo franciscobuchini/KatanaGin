@@ -20,8 +20,8 @@ function Tienda() {
   return (
     <PageContainer gap={8}>
       <SEO 
-        title="Tienda" 
-        description="Explora nuestra colección de gin premium y kits exclusivos de Katana Gin. Calidad y precisión en cada botella." 
+        title="Tienda | Comprar Gin Artesanal en Santa Fe" 
+        description="Explora nuestra tienda online. Comprá gin premium, packs de regalo y kits de Gin Tonic con envío a domicilio en Santa Fe, Santo Tomé y Esperanza. Calidad de exportación." 
         url="https://katanagin.com/tienda"
       />
       <PageTitle>NUESTROS PRODUCTOS</PageTitle>
