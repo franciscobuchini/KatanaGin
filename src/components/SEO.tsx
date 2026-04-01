@@ -13,7 +13,7 @@ interface SEOProps {
 const SEO = ({
   title,
   description = "Katana Gin es sinónimo de pura precisión. Descubre nuestra destilería de gin premium, productos exclusivos y el arte de la mixología de alta calidad.",
-  image = "/og-image.webp",
+  image = "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1775060251/Opengraph_a8v1l2.webp",
   url = "https://katanagin.com/",
   type = "website",
   structuredData,

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PageContainer from '../components/PageContainer';
 import Card from '../components/Card';
 import Label from '../components/Label';
@@ -6,11 +7,42 @@ import Select from '../components/Select';
 import Button from '../components/Button';
 import PageTitle from '../components/PageTitle';
 import SEO from '../components/SEO';
+import { sendContactForm, type ContactFormData } from '../functions/contact';
 
 function Contacto() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Formulario desactivado. Contacto solo por navegación.');
+    setLoading(true);
+    setStatus('idle');
+    
+    const formData = new FormData(e.currentTarget);
+    const data: ContactFormData = {
+      from_name: formData.get('from_name') as string,
+      reply_to: formData.get('reply_to') as string,
+      company: formData.get('company') as string,
+      phone: formData.get('phone') as string,
+      province: formData.get('province') as string,
+      locality: formData.get('locality') as string,
+      location: formData.get('location') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      await sendContactForm(data);
+      setStatus('success');
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Error desconocido');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -89,12 +121,26 @@ function Contacto() {
             <Input id="message" name="message" isTextarea placeholder="Escribe tu mensaje aquí..." required />
           </div>
           
+          {status === 'success' && (
+            <div className="p-4 bg-success/10 border border-success/30 text-success text-sm rounded-xl text-center animate-in fade-in slide-in-from-top-2">
+              ¡Mensaje enviado con éxito! Nos contactaremos pronto.
+            </div>
+          )}
+
+          {status === 'error' && (
+            <div className="p-4 bg-red-500/10 border border-red-500/30 text-red-500 text-sm rounded-xl text-center">
+              Hubo un error: {errorMessage}. Por favor intenta de nuevo.
+            </div>
+          )}
+
           <Button 
             variant="primary" 
             size="lg" 
             className="w-full"
+            disabled={loading}
+            icon={loading ? "mdi:loading" : undefined}
           >
-            Enviar Mensaje
+            {loading ? 'Enviando...' : 'Enviar Mensaje'}
           </Button>
         </form>
       </Card>

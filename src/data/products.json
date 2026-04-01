@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Katana Gin Pandora",
     "price": "$22.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913873/Bottle_wy0ksy.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913873/Bottle_wy0ksy.webp",
     "detail": "750ml",
     "category": "Gin",
     "isAvailable": true
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Katana Gin + Copa",
     "price": "$35.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913875/Kit_Botella_Copa_mt89jc.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913875/Kit_Botella_Copa_mt89jc.webp",
     "detail": "Kit 1",
     "category": "Kits",
     "isAvailable": true
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "Abanico Katanas",
     "price": "$12.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913874/Abanico_Espadas_Negro_se2jwv.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913874/Abanico_Espadas_Negro_se2jwv.webp",
     "detail": "Negro",
     "category": "Merchandising",
     "isAvailable": true
@@ -30,7 +30,7 @@
     "id": 4,
     "title": "Abanico Katanas",
     "price": "$12.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913873/Abanico_Espadas_Blanco_pivgxn.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913873/Abanico_Espadas_Blanco_pivgxn.webp",
     "detail": "Blanco",
     "category": "Merchandising",
     "isAvailable": true
@@ -39,7 +39,7 @@
     "id": 5,
     "title": "Abanico Original",
     "price": "$12.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913876/Abanico_Trama_Blanco_lr5gsu.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913876/Abanico_Trama_Blanco_lr5gsu.webp",
     "detail": "Blanco",
     "category": "Merchandising",
     "isAvailable": true
@@ -48,7 +48,7 @@
     "id": 6,
     "title": "Copa",
     "price": "$12.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913873/Copa_vq0t7m.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913873/Copa_vq0t7m.webp",
     "detail": "Cristal",
     "category": "Merchandising",
     "isAvailable": true
@@ -57,7 +57,7 @@
     "id": 7,
     "title": "Vaso Shot",
     "price": "$12.000",
-    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/v1774913874/Chupito_erikxb.webp",
+    "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913874/Chupito_erikxb.webp",
     "detail": "Cristal",
     "category": "Merchandising",
     "isAvailable": true

@@ -43,7 +43,7 @@ function Header() {
         <div className="flex-1 flex justify-start">
           <Link to="/">
             <img 
-              src="https://res.cloudinary.com/dpleitc1d/image/upload/v1775004783/Katana_Logo_vc2a6b.webp" 
+              src="https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1775004783/Katana_Logo_vc2a6b.webp" 
               alt="Katana Logo" 
               loading="lazy"
               className={`transition-all duration-500 ${scrolled ? 'h-4' : 'h-5'} w-auto opacity-85 hover:opacity-100 flex-shrink-0`} 
