@@ -45,8 +45,12 @@ export default async function handler(
 
     console.log('Email enviado:', info.messageId);
     return res.status(200).json({ status: 'Ok', message: 'Email enviado con éxito' });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error al enviar email (transporter):', error);
-    return res.status(500).json({ status: 'Error', message: 'Error interno al enviar el correo' });
+    // Temporalmente devolvemos el error específico para diagnosticar el problema en producción
+    return res.status(500).json({ 
+      status: 'Error', 
+      message: `Error de envío: ${error.message || 'Error interno al enviar el correo'}` 
+    });
   }
 }
