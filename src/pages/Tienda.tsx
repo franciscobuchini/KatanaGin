@@ -6,16 +6,30 @@ import products from '../data/products.json';
 import PageTitle from '../components/PageTitle';
 import SEO from '../components/SEO';
 
+interface Product {
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+  detail?: string;
+  category: string;
+  isAvailable: boolean;
+  isHidden?: boolean;
+}
+
 function Tienda() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
 
-  // Extraer categorías únicas de los productos (evitando duplicados y falsy)
-  const categories = ['Todos', ...Array.from(new Set(products.map(p => p.category).filter(Boolean)))];
+  // Filtrar productos visibles (no ocultos)
+  const visibleProducts = (products as Product[]).filter(p => !p.isHidden);
+
+  // Extraer categorías únicas de los productos visibles (evitando duplicados y falsy)
+  const categories = ['Todos', ...Array.from(new Set(visibleProducts.map(p => p.category).filter(Boolean)))];
 
   // Filtrar productos según la categoría seleccionada
   const filteredProducts = selectedCategory === 'Todos' 
-    ? products 
-    : products.filter(p => p.category === selectedCategory);
+    ? visibleProducts 
+    : visibleProducts.filter(p => p.category === selectedCategory);
 
   return (
     <PageContainer gap={8}>
