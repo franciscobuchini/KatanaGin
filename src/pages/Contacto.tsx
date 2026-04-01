@@ -5,6 +5,7 @@ import Input from '../components/Input';
 import Select from '../components/Select';
 import Button from '../components/Button';
 import PageTitle from '../components/PageTitle';
+import SEO from '../components/SEO';
 
 function Contacto() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -14,6 +15,11 @@ function Contacto() {
 
   return (
     <PageContainer gap={8}>
+      <SEO 
+        title="Contacto" 
+        description="Ponte en contacto con Katana Gin. Consultas sobre ventas mayoristas, eventos o información general." 
+        url="https://katanagin.com/contacto"
+      />
       <PageTitle>CONTACTO</PageTitle>
       
       <Card className="max-w-2xl mx-auto backdrop-blur-sm border-white/20">

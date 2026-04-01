@@ -4,6 +4,7 @@ import PageContainer from '../components/PageContainer';
 import CategoryFilter from '../components/CategoryFilter';
 import products from '../data/products.json';
 import PageTitle from '../components/PageTitle';
+import SEO from '../components/SEO';
 
 function Tienda() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
@@ -18,6 +19,11 @@ function Tienda() {
 
   return (
     <PageContainer gap={8}>
+      <SEO 
+        title="Tienda" 
+        description="Explora nuestra colección de gin premium y kits exclusivos de Katana Gin. Calidad y precisión en cada botella." 
+        url="https://katanagin.com/tienda"
+      />
       <PageTitle>NUESTROS PRODUCTOS</PageTitle>
       
       <CategoryFilter 

@@ -5,6 +5,7 @@ import Card from '../components/Card';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { useCoupons } from '../functions/useCoupons';
+import SEO from '../components/SEO';
 
 function Checkout() {
   const { cartItems } = useCart();
@@ -27,6 +28,11 @@ function Checkout() {
   
   return (
     <PageContainer gap={16}>
+      <SEO 
+        title="Finalizar Compra" 
+        description="Revisa tu pedido y finaliza tu compra. Katana Gin, pura precisión en tu copa."
+        noindex
+      />
       <PageTitle uppercase>FINALIZAR COMPRA</PageTitle>
       
       <div className='w-full max-w-2xl mt-8 md:mt-12'>
