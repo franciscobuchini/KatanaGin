@@ -13,15 +13,17 @@ export default async function handler(
   const { from_name, reply_to, company, phone, province, locality, location, subject, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
+      pass: process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, ''),
     },
   });
 
   try {
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"Formulario Web Katana" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       replyTo: reply_to,
@@ -41,9 +43,10 @@ export default async function handler(
       `,
     });
 
+    console.log('Email enviado:', info.messageId);
     return res.status(200).json({ status: 'Ok', message: 'Email enviado con éxito' });
   } catch (error) {
-    console.error('Error al enviar email:', error);
+    console.error('Error al enviar email (transporter):', error);
     return res.status(500).json({ status: 'Error', message: 'Error interno al enviar el correo' });
   }
 }

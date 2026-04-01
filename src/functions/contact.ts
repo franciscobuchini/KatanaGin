@@ -24,9 +24,22 @@ export const sendContactForm = async (data: ContactFormData) => {
   });
 
   if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(errorData.message || "Error al enviar el email");
+    let errorMessage = "Error al enviar el email";
+    try {
+      const errorData = await response.json();
+      errorMessage = errorData.message || errorMessage;
+    } catch (e) {
+      // Si no es JSON (ej. error 504 del proxy o servidor caído), usamos el statusText
+      console.error("No se pudo parsear la respuesta de error como JSON:", e);
+      errorMessage = `Error del servidor (${response.status}): ${response.statusText || 'No se pudo completar la conexión'}`;
+    }
+    throw new Error(errorMessage);
   }
 
-  return await response.json();
+  try {
+    return await response.json();
+  } catch (e) {
+    console.error("No se pudo parsear la respuesta de éxito como JSON:", e);
+    throw new Error("Respuesta del servidor inválida");
+  }
 };
