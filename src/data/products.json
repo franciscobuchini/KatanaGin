@@ -53,7 +53,7 @@
     "title": "Copa",
     "price": "$6.500",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913873/Copa_vq0t7m.webp",
-    "detail": "Cristal",
+    "detail": "600ml",
     "category": "Merchandising",
     "isAvailable": false,
     "isProximamente": true
@@ -63,7 +63,7 @@
     "title": "Vaso Shot",
     "price": "$12.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913874/Chupito_erikxb.webp",
-    "detail": "Cristal",
+    "detail": "60ml",
     "category": "Merchandising",
     "isAvailable": false,
     "isProximamente": true,
