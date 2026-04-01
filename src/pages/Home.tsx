@@ -29,7 +29,7 @@ function Home() {
       <div className='text-center flex flex-col gap-6 items-center'>
         <PageTitle size="lg" uppercase>
           PURA<br/>
-          PRECISION
+          PRECISIÓN
         </PageTitle>        
       </div>
       
@@ -53,7 +53,7 @@ function Home() {
           </Link>
           <Link to="/contacto">
             <Button variant="secondary" size="lg" className="min-w-[200px]">
-              Contactanos
+              Contáctanos
             </Button>
           </Link>
         </div>

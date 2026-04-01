@@ -6,6 +6,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { useCoupons } from '../functions/useCoupons';
 import SEO from '../components/SEO';
+import { generateWhatsAppMessage } from '../functions/whatsapp';
 
 function Checkout() {
   const { cartItems } = useCart();
@@ -25,7 +26,8 @@ function Checkout() {
     applyCoupon,
     handleCouponChange
   } = useCoupons(subtotal);
-  
+
+
   return (
     <PageContainer gap={16}>
       <SEO 
@@ -105,7 +107,7 @@ function Checkout() {
                 size="lg" 
                 className="w-full mt-4" 
                 icon="logos:whatsapp-icon"
-                onClick={() => window.open('https://wa.me/549342', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open(`https://wa.me/5493426395442?text=${generateWhatsAppMessage({ cartItems, subtotal, discountAmount, total })}`, '_blank', 'noopener,noreferrer')}
               >
                 Finalizar por WhatsApp
               </Button>

@@ -35,7 +35,7 @@
   --color-gray-950: #030712;
 
   /* Font Families */
-  --font-rodfat: "Rodfat", sans-serif;
+  --font-rodfat: "Rodfat", "Outfit", sans-serif;
 }
 
 @layer base {
