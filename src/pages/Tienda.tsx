@@ -14,6 +14,7 @@ interface Product {
   detail?: string;
   category: string;
   isAvailable: boolean;
+  isProximamente?: boolean;
   isHidden?: boolean;
 }
 
@@ -56,6 +57,7 @@ function Tienda() {
             image={product.image}
             detail={product.detail}
             isAvailable={product.isAvailable}
+            isProximamente={product.isProximamente}
           />
         ))}
       </div>

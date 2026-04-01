@@ -10,9 +10,10 @@ interface ProductCardProps {
   image: string;
   detail?: string;
   isAvailable?: boolean;
+  isProximamente?: boolean;
 }
 
-export default function ProductCard({ id, title, price, image, detail, isAvailable = true }: ProductCardProps) {
+export default function ProductCard({ id, title, price, image, detail, isAvailable = true, isProximamente = false }: ProductCardProps) {
   const [isAdded, setIsAdded] = useState(false);
   const { addToCart } = useCart();
 
@@ -45,7 +46,7 @@ export default function ProductCard({ id, title, price, image, detail, isAvailab
             {detail && <span className='font-normal text-gray-400 text-xs shrink-0'>{detail}</span>}
           </h3>
           <span className='text-lg text-accent font-medium'>
-            {price}
+            {isProximamente ? '-' : price}
           </span>
         </div>
         
@@ -59,7 +60,7 @@ export default function ProductCard({ id, title, price, image, detail, isAvailab
           />
         ) : (
           <Badge variant="primary" size="xs">
-            Sin stock
+            {isProximamente ? "Próximamente" : "Sin stock"}
           </Badge>
         )}
       </div>
