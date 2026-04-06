@@ -107,7 +107,7 @@ function Checkout() {
                 size="lg" 
                 className="w-full mt-4" 
                 icon="logos:whatsapp-icon"
-                onClick={() => window.open(`https://wa.me/5493426395442?text=${generateWhatsAppMessage({ cartItems, subtotal, discountAmount, total })}`, '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open(`https://wa.me/5493424666830?text=${generateWhatsAppMessage({ cartItems, subtotal, discountAmount, total })}`, '_blank', 'noopener,noreferrer')}
               >
                 Finalizar por WhatsApp
               </Button>

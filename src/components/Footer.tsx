@@ -18,7 +18,7 @@ function Footer() {
         <Button 
           variant="secondary" 
           icon="ri:whatsapp-fill" 
-          onClick={() => window.open('https://wa.me/549342', '_blank', 'noopener,noreferrer')}
+          onClick={() => window.open('https://wa.me/5493424666830', '_blank', 'noopener,noreferrer')}
         />
         <Button 
           variant="secondary" 
