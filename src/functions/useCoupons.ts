@@ -13,7 +13,7 @@ export const useCoupons = (subtotal: number) => {
   const [appliedCoupon, setAppliedCoupon] = useState<AppliedCoupon | null>(null);
 
   const applyCoupon = () => {
-    const foundCoupon = couponsData.find(c => c.code === couponCode.trim().toUpperCase());
+    const foundCoupon = couponsData.find(c => c.code.toUpperCase() === couponCode.trim().toUpperCase());
     if (foundCoupon) {
       setCouponStatus('valid');
       setAppliedCoupon({ discount: foundCoupon.discount, type: foundCoupon.type });
