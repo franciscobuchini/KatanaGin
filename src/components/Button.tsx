@@ -9,6 +9,7 @@ interface ButtonProps {
   children?: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  type?: 'button' | 'submit' | 'reset';
   icon?: string;
   hoverIcon?: string;
   onClick?: () => void;
@@ -20,6 +21,7 @@ function Button({
   children,
   variant = 'primary',
   size = 'md',
+  type = 'submit',
   icon,
   hoverIcon,
   onClick,
@@ -71,6 +73,7 @@ function Button({
 
   return (
     <button 
+      type={type}
       onClick={onClick} 
       className={finalClasses} 
       disabled={disabled}

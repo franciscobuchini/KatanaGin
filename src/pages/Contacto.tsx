@@ -142,6 +142,23 @@ function Contacto() {
           >
             {loading ? 'Enviando...' : 'Enviar Mensaje'}
           </Button>
+
+          <div className="flex items-center gap-4 w-full">
+            <div className="h-px flex-1 bg-border/50"></div>
+            <span className="text-muted text-sm font-medium uppercase">ó</span>
+            <div className="h-px flex-1 bg-border/50"></div>
+          </div>
+
+          <Button 
+            type="button"
+            variant="secondary" 
+            size="lg" 
+            className="w-full"
+            icon="logos:whatsapp-icon"
+            onClick={() => window.open('https://wa.me/5493424666830', '_blank', 'noopener,noreferrer')}
+          >
+            <span className="hidden md:inline">Hablar por </span>WhatsApp
+          </Button>
         </form>
       </Card>
     </PageContainer>
