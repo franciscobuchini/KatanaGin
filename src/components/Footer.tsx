@@ -23,7 +23,7 @@ function Footer() {
         <Button 
           variant="secondary" 
           icon="ri:instagram-fill" 
-          onClick={() => window.open('https://instagram.com', '_blank', 'noopener,noreferrer')}
+          onClick={() => window.open('https://instagram.com/katana.gin', '_blank', 'noopener,noreferrer')}
         />
       </div>
     </footer>
