@@ -28,9 +28,13 @@ function Tienda() {
   const categories = ['Todos', ...Array.from(new Set(visibleProducts.map(p => p.category).filter(Boolean)))];
 
   // Filtrar productos según la categoría seleccionada
-  const filteredProducts = selectedCategory === 'Todos' 
+  const filteredProducts = (selectedCategory === 'Todos' 
     ? visibleProducts 
-    : visibleProducts.filter(p => p.category === selectedCategory);
+    : visibleProducts.filter(p => p.category === selectedCategory))
+    .sort((a, b) => {
+      if (a.isAvailable === b.isAvailable) return 0;
+      return a.isAvailable ? -1 : 1;
+    });
 
   return (
     <PageContainer gap={8}>
