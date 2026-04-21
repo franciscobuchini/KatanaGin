@@ -11,12 +11,11 @@
   {
     "id": 2,
     "title": "Katana Gin + Copa",
-    "price": "$25.900",
+    "price": "$26.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913875/Kit_Botella_Copa_mt89jc.webp",
     "detail": "Kit 1",
     "category": "Kits",
-    "isAvailable": false,
-    "isProximamente": true
+    "isAvailable": true
   },
   {
     "id": 3,
@@ -51,12 +50,11 @@
   {
     "id": 6,
     "title": "Copa",
-    "price": "$6.500",
+    "price": "$8.000",
     "image": "https://res.cloudinary.com/dpleitc1d/image/upload/q_auto/f_auto/v1774913873/Copa_vq0t7m.webp",
     "detail": "600ml",
     "category": "Merchandising",
-    "isAvailable": false,
-    "isProximamente": true
+    "isAvailable": true
   },
   {
     "id": 7,
